@@ -6,16 +6,38 @@ import { useParams } from "react-router-dom";
 function FullView(){
     const [newimage , setNewimage] = useState()
     const {id} = useParams();
+    const [inLoading , setInloading] = useState(false)
     async function downloadData(){
         const getData = await axios.get(`https://api.slingacademy.com/v1/sample-data/photos/${id}`)
         setNewimage(getData.data.photo)
+
     }
 
     useEffect(() =>{
+        setInloading(false)
         downloadData()
     } ,[])
     return(
-        <div className="full-page">
+        <>
+        {inLoading ? <div class="loader">
+	<div class="loader-inner">
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+	</div>
+</div> : <div className="full-page">
         <div className="image-view">
             {newimage &&  <img src={newimage.url} alt="" /> }
         </div>
@@ -25,7 +47,10 @@ function FullView(){
 
             {newimage && <h2> {newimage.title} </h2>}
         </div>
-        </div>
+        </div>}
+        
+        
+        </>
     )
 }
 
