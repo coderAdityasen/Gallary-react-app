@@ -61,12 +61,16 @@
     overflow: hidden;
   }
 
-
+  .button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .next-btn{
     padding: 1.5rem 3rem;
     text-align: center;
-    margin: 5% 0 5% 40%;
+    margin:2rem auto;
     color: white;
     background-color: rgb(40, 50, 119);
     border: none;
