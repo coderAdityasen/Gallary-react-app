@@ -14,7 +14,7 @@ to install all the packages (dependencies are available in package.json file)
 
 # You can view the live here 
 </br>
-<a href=""> Visit to Website</a>
+<a href="https://gallary-react-app.vercel.app/"> Visit to Website</a>
 
 # api from sling academy
 
